@@ -176,6 +176,9 @@ Ejercicios
   una captura de pantalla en la que se vea el mensaje de ayuda del programa.
 
 
+<img width="518" alt="Screenshot 2023-04-07 at 12 46 17" src="https://user-images.githubusercontent.com/114567626/230596129-7781191a-53cd-40d8-bfeb-d2379645eaf6.png">
+
+
 ### Contribuciones adicionales y/o comentarios acerca de la práctica
 
 - Indique a continuación si ha realizado algún tipo de aportación suplementaria (algoritmos de detección o 
