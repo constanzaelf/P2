@@ -129,7 +129,7 @@ VAD_STATE vad(VAD_DATA *vad_data, float *x) {
       vad_data->state=ST_VOICE;
       vad_data->num_t=9;
     }
-    if(f.am<1e-4 ){
+    if(f.am<1e-6 ){
     vad_data->state = ST_SILENCE;
     vad_data->num_t=9;
     }
@@ -147,7 +147,7 @@ VAD_STATE vad(VAD_DATA *vad_data, float *x) {
     }else if(f.p<vad_data->P0 || vad_data->num_t<=0){
       vad_data->state=ST_SILENCE;
       vad_data->num_t=9;
-    }else if(f.am > 1.9e-4 ){
+    }else if(f.am > 2e-4 ){
       vad_data->state = ST_QV;
       vad_data->num_t=9;
     }
