@@ -135,19 +135,19 @@ Ejercicios
 - Etiquete manualmente los segmentos de voz y silencio del fichero grabado al efecto. Inserte, a 
   continuación, una captura de `wavesurfer` en la que se vea con claridad la señal temporal, el contorno de
   potencia y la tasa de cruces por cero, junto con el etiquetado manual de los segmentos.
-  ![image](https://user-images.githubusercontent.com/113508290/231715156-b2877306-0418-40fc-9d4a-cee2722a49ce.png)
-
-
+<img width="1388" alt="image" src="https://user-images.githubusercontent.com/114567626/231801841-0d9458e7-3c25-4b90-87bd-5ffe5fe9ae62.png">
 
 - A la vista de la gráfica, indique qué valores considera adecuados para las magnitudes siguientes:
 
 	* Incremento del nivel potencia en dB, respecto al nivel correspondiente al silencio inicial, para
 	  estar seguros de que un segmento de señal se corresponde con voz.
-
+Podemos ver que la potencia inicial que en nuestro caso correspondería al silencio es de 35 dB aproximadamente, sin embargo si se escucha el audio se puede apreciar que no es un silencio total y que tenemos un poco de ruido de fondo. Después esta aumenta a 46dB aproximadamente cuando se trata de la primera voz (correspondiente al principio de la palabra "Hola"), por lo tanto tenemos un incremento de 11 dB. Como podemos oir en el audio, y por la poca diferencia de potencia que hay entre un supuesto silencio y la voz, podriamos decir qu etenemos una señal ruidosa lo cual ha supuesto un reto mayor a la hora de reconocer si se trataba de silencio o voz.
 	* Duración mínima razonable de los segmentos de voz y silencio.
+	
+La duración que hemos considerado mínima del segmento de voz es de 8ms aproximadamente para el silencio y 100ms para la voz.
 
 	* ¿Es capaz de sacar alguna conclusión a partir de la evolución de la tasa de cruces por cero?
-
+Podemos ver que cuando se trata de sonidos sordos y silencio la tasa de cruces por cero es más alta que para sonidos sonoros.
 
 ### Desarrollo del detector de actividad vocal
 
@@ -159,9 +159,10 @@ Ejercicios
 - Inserte una gráfica en la que se vea con claridad la señal temporal, el etiquetado manual y la detección
   automática conseguida para el fichero grabado al efecto. 
   
-  ** Captura adjuntada arriba
+ ![image](https://user-images.githubusercontent.com/114567626/231804951-b7019dad-9f6a-463f-a131-4d2de8880517.png)
 
 - Explique, si existen. las discrepancias entre el etiquetado manual y la detección automática.
+Podemos ver en los primeros tramos por ejemplo que el silencio se detecta más tarde y la voz en cambio se detecta antes quizás debido a que confunde un ruido de fondo con la voz que queremos detectar. Por lo tanto, hay ciertas discrepancias entre el etiquetado manual y el automático de voz y silencio. Esto se debe en parte a que ciertos sonidos sordos pueden ser e conocidos como silencios pero además también se puede ver que se detecta voz cuando no la hay (esto se puede deber a que tenemos una señal ruidosa, o un cierto ruido de fondo), o al revés que detecta voz cuando es silencio.
 
 - Evalúe los resultados sobre la base de datos `db.v4` con el script `vad_evaluation.pl` e inserte a 
   continuación las tasas de sensibilidad (*recall*) y precisión para el conjunto de la base de datos (sólo
