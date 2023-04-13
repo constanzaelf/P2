@@ -206,6 +206,10 @@ Podemos ver en los primeros tramos por ejemplo que el silencio se detecta más t
   considere de interés de cara a su evaluación.
 
 
+Para realizar este programa y conseguir una mayor precisión a la hora de la detección, hemos añadido otros 2 estados QV (quizás voz) y QS (quizás silencio). De este modo implementamos unos estados transitorios limitados por 9 iteraciones. Por ejemplo, si queremos detectar voz y estamos en silencio, si la señal supera el umbral P0 pasamos al estado QV, cuando estamos en este estado verificamos que estamos por encima del umbral de potencia c1 y si se cumplen las condiciones de amplitud y cruces por cero. Si lo hace pasamos a Voz y sino tiene hasta 9 iteraciones para cumplirlo hasta que se cambia a Silencio en caso de no cumplirlo.
+Creemos que estos estados transitorios han sido especialmente útiles para señales que como la nuestra eran especialmente ruidosas y podía presentar dificultades de distinción. Así pues, por ejemplo, conseguimos que los ruidos de fondo o de boca se detecten como silencio.
+
+
 ### Antes de entregar la práctica
 
 Recuerde comprobar que el repositorio cuenta con los códigos correctos y en condiciones de ser 
